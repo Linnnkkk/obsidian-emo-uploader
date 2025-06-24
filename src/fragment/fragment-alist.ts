@@ -57,5 +57,16 @@ export class AlistFragment extends EmoFragment {
             await plugin.saveSettings()
           })
       })
+
+    new Setting(el)
+      .setName(t('getfilePath'))
+      .addText((text) => {
+        text
+          .setValue(parms.required.getfilePath)
+          .onChange(async (value) => {
+            parms.required.getfilePath = value
+            await plugin.saveSettings()
+          })
+      })
   }
 }
